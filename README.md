@@ -1,13 +1,12 @@
 # tilt
 
-Easy access to the current tilt on `x` and `y` axis for supported devices[^*].
+Easy access to the current tilt on `x` and `y` axis for supported devices[^1].
 
 The package uses a simplified [complementary filter](https://ahrs.readthedocs.io/en/latest/filters/complementary.html) to estimate device's current roll and pitch based on gyroscope and accelerometer data.
 
 These two data sources are combined in order to mitigate their unique disadvantages (accelerometer's noise and gyroscope's eventual drift), while combining their strengths (accelerometer's relative stability of measurement and gyroscope's precission). 
 
 That being said, it means that no single `Tilt` value should be taken as an absolute true tilt of the device: each emitted value contains some proportion of error. 
-
 
 # Usage
 
@@ -40,4 +39,4 @@ Theoretically, yaw of the device could be calculated by complementing gyroscope 
 Both Android and iOS SDKs provide readily available information about compass heading. However, it's necessary to obtain location permission to access this data, which seemed out of scope for a simple package that calculates the tilt. If you still need the yaw value, I'd suggest checking out [flutter_compass](https://pub.dev/packages/flutter_compass) package.
 
 
-[^*] it should work on all iOS and Android devices which have gyroscope and accelerometer sensors.
+[^1] it should work on all iOS and Android devices which have gyroscope and accelerometer sensors.

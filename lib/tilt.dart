@@ -35,7 +35,8 @@ class DeviceTilt {
         ) {
     _tilt = initialTilt;
     stream = (gyroscope ?? gyroscopeEvents)
-        .combineLatest((accelerometer ?? accelerometerEvents), (p0, p1) => [p0, p1])
+        .combineLatest(
+            (accelerometer ?? accelerometerEvents), (p0, p1) => [p0, p1])
         .buffer(Stream.periodic(Duration(milliseconds: samplingRateMs)))
         .map(
       (listOfPairs) {
