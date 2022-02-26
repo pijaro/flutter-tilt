@@ -16,12 +16,15 @@ class MyApp extends StatelessWidget {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: StreamBuilder<Rotation>(
-            stream: Tilt().stream,
+          child: StreamBuilder<Tilt>(
+            stream: DeviceTilt(
+              samplingRateMs: 20,
+              initialTilt: const Tilt(0, 0),
+              filterGain: 0.1,
+            ).stream,
             builder: (context, snapshot) {
               if (snapshot.hasData && snapshot.data != null) {
-                final rotation = snapshot.data!;
-                return Text(rotation.toString());
+                return Text(snapshot.data!.toString());
               }
               return const CircularProgressIndicator();
             },

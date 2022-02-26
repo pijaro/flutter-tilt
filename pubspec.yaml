@@ -28,6 +28,3 @@ flutter:
         pluginClass: TiltPlugin
       ios:
         pluginClass: TiltPlugin
-      web:
-        pluginClass: TiltWeb
-        fileName: tilt_web.dart
