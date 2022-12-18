@@ -1,16 +1,16 @@
 name: tilt
 description: Easy access to the current tilt on `x` and `y` axis.
 version: 0.0.2
-repository: https://github.com/mia-recki/flutter-tilt
+repository: https://github.com/pijaro/flutter-tilt
 
 environment:
-  sdk: ">=2.16.0 <3.0.0"
-  flutter: ">=2.5.0"
+  sdk: ">=2.11.0 <3.0.0"
+  flutter: ">=2.2.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  sensors_plus: ^1.3.0
+  sensors_plus: 0.6.0
   stream_transform: ^2.0.0
 
 dev_dependencies:

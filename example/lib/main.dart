@@ -6,7 +6,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
             ).stream,
             builder: (context, snapshot) {
               if (snapshot.hasData && snapshot.data != null) {
-                return Text(snapshot.data!.toString());
+                return Text(snapshot.data.toString());
               }
               return const CircularProgressIndicator();
             },

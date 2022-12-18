@@ -2,7 +2,7 @@
     package="me.recki.tilt_example">
    <application
         android:label="tilt_example"
-        android:name="${applicationName}"
+        android:name="io.flutter.app.FlutterApplication"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

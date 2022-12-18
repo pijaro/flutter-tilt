@@ -1,3 +1,5 @@
+// @dart=2.9
+
 import 'dart:math';
 
 import 'package:sensors_plus/sensors_plus.dart';
@@ -19,16 +21,16 @@ class DeviceTilt {
   final double filterGain;
 
   /// Emits current [Tilt] every [samplingRateMs] milliseconds.
-  late final Stream<Tilt> stream;
+  Stream<Tilt> stream;
 
-  late Tilt _tilt;
+  Tilt _tilt;
 
   DeviceTilt({
     this.samplingRateMs = 20,
     this.initialTilt = const Tilt(0, 0),
     this.filterGain = 0.1,
-    Stream<GyroscopeEvent>? gyroscope,
-    Stream<AccelerometerEvent>? accelerometer,
+    Stream<GyroscopeEvent> gyroscope,
+    Stream<AccelerometerEvent> accelerometer,
   }) : assert(
           filterGain >= 0 && filterGain <= 1,
           'filterGain must be a valu between 0 and 1, current value is $filterGain',
